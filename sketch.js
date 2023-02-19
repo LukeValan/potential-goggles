@@ -12,14 +12,14 @@ function draw() {
     let touch = touches[i]
     noStroke();
     fill(random(255), random(255), random(255));
-    circleSize = touch.pressure*20
+    circleSize = touch.force*100
     circle(touch.x, touch.y, circleSize);
   }
 }
 
 
 
-console.log("v:sd")
+console.log("v:sd2")
 
 
 
