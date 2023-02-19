@@ -1,29 +1,24 @@
-let x = 200;
-let y = 200;
+let circleSize = 20;
 
 function setup() {
-  createCanvas(400, 400);
-  // call the scaleCanvas() function to scale the canvas to fit the screen
-  scaleCanvas();
-}
-
-function touchMoved() {
-  if (touches.length === 2) {
-    let touch1 = touches[0];
-    let touch2 = touches[1];
-    let dx = touch1.x - touch2.x;
-    let dy = touch1.y - touch2.y;
-    x += dx;
-    y += dy;
-  }
-  return false;
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(220);
-  ellipse(x, y, 50, 50);
+  background(255);
+  // iterate through all touches
+  for (let i = 0; i < touches.length; i++) {
+    // get touch position and draw a circle there
+    let touch = touches[i]
+    noStroke();
+    fill(random(255), random(255), random(255));
+    circle(touch.x, touch.y, circleSize);
+  }
 }
 
+function touchMoved() {
+  return false; // prevent default browser behavior
+}
 function scaleCanvas() {
   // get the width and height of the screen
   let screenWidth = windowWidth;
