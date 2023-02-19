@@ -1,4 +1,4 @@
-let circleSize = 20;
+let circleSize = 40;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -15,6 +15,12 @@ function draw() {
     circle(touch.x, touch.y, circleSize);
   }
 }
+
+
+
+
+
+
 
 function touchMoved() {
   return false; // prevent default browser behavior
