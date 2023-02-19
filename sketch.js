@@ -9,11 +9,10 @@ function draw() {
   // iterate through all touches
   for (let i = 0; i < touches.length; i++) {
     // get touch position and draw a circle there
-    let touchX = touches[i].x;
-    let touchY = touches[i].y;
+    let touch = touches[i]
     noStroke();
     fill(random(255), random(255), random(255));
-    circle(touchX, touchY, circleSize);
+    circle(touch.x, touch.y, circleSize);
   }
 }
 
